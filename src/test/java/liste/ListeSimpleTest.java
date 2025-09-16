@@ -275,5 +275,49 @@ class ListeSimpleTest {
 }
 
 
+    @Test
+    void modifiePremierListeAvecElementNonTete() {
+    listeATester.ajout(1);
+    listeATester.ajout(2);
+    listeATester.ajout(3);
+    listeATester.modifiePremier(2, 99);
+    assertEquals("ListeSimple(Noeud(3), Noeud(99), Noeud(1))", listeATester.toString());
+}
+
+    @Test
+    void modifiePremierElementAbsent() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.modifiePremier(99, 100);
+        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
+}
+
+    @Test
+    void supprimePremierElementEnTete() {
+        listeATester.ajout(1);
+        listeATester.ajout(2); 
+        listeATester.supprimePremier(2); 
+        assertEquals("ListeSimple(Noeud(1))", listeATester.toString());
+        assertEquals(1, listeATester.getSize());
+    }
+
+    @Test
+    void supprimePremierElementDansListe() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.ajout(3); 
+        listeATester.supprimePremier(2); 
+        assertEquals("ListeSimple(Noeud(3), Noeud(1))", listeATester.toString());
+        assertEquals(2, listeATester.getSize());
+    }
+
+    @Test
+    void supprimePremierElementAbsent() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.supprimePremier(99); 
+        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
+        assertEquals(2, listeATester.getSize());
+    }
 
 }
