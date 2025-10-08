@@ -1,6 +1,5 @@
 name: Documentation Java
 
-# Déclenchement uniquement après la fusion d'une pull request sur main
 on:
   pull_request:
     types: [closed] 
@@ -8,7 +7,7 @@ on:
 
 jobs:
   build-docs:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true  # ne s'exécute que si la PR a été fusionnée
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +26,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/site/apidocs 
           publish_branch: gh-pages
