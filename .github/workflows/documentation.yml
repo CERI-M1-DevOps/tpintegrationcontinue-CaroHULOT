@@ -29,3 +29,4 @@ jobs:
           github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./target/site/apidocs 
           publish_branch: gh-pages
+
