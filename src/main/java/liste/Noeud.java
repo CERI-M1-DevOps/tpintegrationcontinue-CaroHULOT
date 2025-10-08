@@ -1,5 +1,10 @@
 package liste;
 
+
+/**
+ * Classe représentant un nœud d'une liste chaînée simple.
+ * Chaque nœud contient un élément et une référence vers le nœud suivant.
+ */
 public class Noeud {
     private Object element;
     private Noeud suivant;
