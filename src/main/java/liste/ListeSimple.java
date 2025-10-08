@@ -106,6 +106,7 @@ public class ListeSimple {
         tete = precedent;
     }
 
+    
     public Noeud getPrecedent(Noeud r) {
     // la liste n'est pas vide puisqu'on transmet un Node de la liste et le Node existe obligatoirement
         Noeud precedent = tete;
